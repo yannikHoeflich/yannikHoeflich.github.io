@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  color: #101010;
+  font-weight: 500;
+}
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+main {
+  margin: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+b {
+  font-weight: 700;
+}
+
+a[href] {
+  text-decoration: none;
+  color: #219ebc;
+}
+
+a[href]:hover {
+  text-decoration: underline;
+}
+
+.thin {
+  font-weight: 100;
+}
+
+.gap-below {
+  margin-bottom: 30px;
+}
+
+.warning {
+  background-color: #fb8500;
+  padding: 0;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 23px;
+  padding: 10px;
+  color: #EEEEEE;
+  border: solid 1px #b8b8b8;
+}
+.warning p {
+  font-weight: 500;
+  font-size: 18px;
+  color: #EEEEEE;
+}
+
+nav {
+  position: sticky;
+  display: flex;
+  margin-bottom: 20px;
+}
+nav .nav-item {
+  flex-direction: row;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #101010;
+}
+nav .nav-item:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+@media (min-width: 500px) {
+  nav {
+    justify-content: center;
+    box-shadow: #e7e7e7 0 3px 10px 10px;
+  }
+}
+@media (max-width: 500px) {
+  nav {
+    justify-content: space-between;
+    border-bottom: solid #b8b8b8 1px;
+  }
+  nav .nav-item {
+    padding: 20px;
+  }
+}
+.name {
+  color: #023047;
+}
+
+/*# sourceMappingURL=index.css.map */

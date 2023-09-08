@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yannik Höflich</title>
-</head>
-<body>
-    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  if(window.location.host != "yannik.hoeflich.site"){
-    window.location = "https://yannik.hoeflich.site/"
-  }
 
-  /*kofiWidgetOverlay.draw('yannikhoeflich', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support Me',
-    'floating-chat.donateButton.background-color': '#794bc4',
-    'floating-chat.donateButton.text-color': '#fff',
-  });*/
-</script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/index.css" />
+  <title>Yannik Höflich</title>
+</head>
+
+<body>
+  <nav>
+    <a class="nav-item" href="/">
+      Home
+    </a>
+    <a class="nav-item" href="/about">
+      About Me
+    </a>
+    <a class="nav-item" href="/projects">
+      Projects
+    </a>
+  </nav>
+  <!--<h1 class="name gap-below">Yannik Höflich</h1>-->
+  <main>
+  <h3 class="gap-below">Hey!</h3>
+  <p class="gap-below">
+    My name is Yannik Höflich, I am a business Informatics student from Germany.<br />
+    Feel free to look around to get to know me better!
+  </p>
+
+  <div class="warning">
+    !!! Comming soon !!!
+    <p>
+      This website is still in the build progress, thats the reason why some features or pages are not available.
+    </p>
+  </div>
+</main>
+  <script>
+    if (window.location.host == "yannikhoeflich.github.io") {
+      window.location = "https://yannik.hoeflich.site/"
+    }
+  </script>
 </body>
+
 </html>
