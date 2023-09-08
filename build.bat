@@ -1,2 +1,3 @@
 @echo off
-sass src/scss/index.scss src/css/index.css
+
+sass src/scss:src/css

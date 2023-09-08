@@ -9,7 +9,7 @@
     font-weight: font.$weight-normal;
 }
 
-*, html, body{
+html, body{
     margin: 0;
     padding: 0;
     border: none;
@@ -67,6 +67,16 @@ a[href]:hover {
         font-weight: font.$weight-normal;
         font-size: font.$size-normal;
         color: colors.$white;
+    }
+}
+
+.table-invisible{
+    border: none;
+    width: 100%;
+
+    tr td:first-child{
+        font-weight: font.$bold;
+        width: min(50%, 200px);
     }
 }
 
