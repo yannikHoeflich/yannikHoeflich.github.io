@@ -7,6 +7,7 @@
     font-family: 'Roboto', sans-serif;
     color: colors.$black;
     font-weight: font.$weight-normal;
+    font-size: font.$size-normal;
 }
 
 html, body{
@@ -30,6 +31,7 @@ h5 {
 
 h1 {
     font-weight: font.$thin;
+    font-size: font.$biggest;
 }
 
 b {
@@ -78,6 +80,16 @@ a[href]:hover {
         font-weight: font.$bold;
         width: min(50%, 200px);
     }
+}
+
+.badge{
+    display: inline-block;
+    padding: 4px;
+    font-size: font.$smaller;
+    background-color: colors.$light-gray;
+    border-radius: 5px;
+    color: colors.$white;
+    margin-right: 5px;
 }
 
 nav {

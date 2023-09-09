@@ -1,2 +1,163 @@
 @use 'colors';
+@use 'font';
 @use 'base';
+
+.project-group {
+    border-top: solid 1px colors.$light-gray;
+    padding-top: 10px;
+
+    h3 {
+        font-size: font.$big;
+    }
+
+    .project {
+        margin-right: 30px;
+        border-top: none;
+
+        h3 {
+            font-size: font.$bigger;
+        }
+    }
+}
+
+.project {
+    padding: 10px;
+    margin-top: 30px;
+    border-top: solid 1px colors.$light-gray;
+    width: 100%;
+
+    h3 {
+        font-size: font.$big;
+    }
+
+    .body {
+        padding-left: 30px;
+        width: min(calc(100% - 30px), 1000px);
+    }
+
+    .links {
+        margin-top: 40px;
+        padding-left: 30px;
+
+        a {
+            display: table;
+            margin-top: 10px;
+        }
+
+        a::before {
+            @extend .badge;
+            content: 'Other';
+            background-color: colors.$dark-blue;
+        }
+
+        a[href*="github.com"]::before {
+            content: 'GitHub';
+        }
+
+        a[href*="github.com"][href$="/wiki"]::before {
+            content: 'Wiki';
+        }
+
+        a[href*="play.google.com"]::before {
+            content: 'Playstore';
+        }
+
+        a[href*="nuget.org"]::before {
+            content: 'NuGet';
+        }
+    }
+
+    .links::before {
+        display: block;
+        content: "Links";
+        font-weight: font.$bold;
+    }
+
+    .technologies {
+        padding-left: 30px;
+
+        i::after {
+            @extend .badge;
+            font-style: normal;
+        }
+
+        i.maui::after {
+            content: 'Maui.NET';
+            background-color: colors.$purple;
+        }
+
+        i.cs::after {
+            content: 'C#';
+            background-color: colors.$green;
+        }
+
+        i.dotnet::after {
+            content: '.NET';
+            background-color: colors.$orange;
+        }
+
+        i.mongo::after {
+            content: 'MongoDB';
+            background-color: colors.$dark-green;
+        }
+
+        i.blazor::after {
+            content: 'Blazor';
+            background-color: colors.$blue;
+        }
+
+        i.c::after {
+            content: 'C';
+            background-color: colors.$red;
+        }
+
+        i.bootstrap::after {
+            content: 'Bootstrap';
+            background-color: colors.$purple;
+        }
+
+        i.rest::after {
+            content: 'Rest API';
+            background-color: colors.$pink;
+        }
+    }
+
+    .technologies::before {
+        display: block;
+        content: "Technologies";
+        font-weight: font.$bold;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 650px) {
+    .project {
+        .body {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .links {
+            padding-left: 0;
+
+            a {
+                font-size: 0;
+            }
+
+            a::before {
+                font-size: font.$size-normal;
+            }
+
+            a::after {
+                font-size: font.$size-normal;
+                content: 'Link';
+                display: inline;
+                visibility: visible;
+            }
+        }
+        
+        .technologies{
+            padding-left: 0;
+        }
+    }
+}

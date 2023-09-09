@@ -3,6 +3,7 @@
   font-family: "Roboto", sans-serif;
   color: #101010;
   font-weight: 500;
+  font-size: 16px;
 }
 
 html, body {
@@ -26,6 +27,7 @@ h5 {
 
 h1 {
   font-weight: 100;
+  font-size: 45px;
 }
 
 b {
@@ -61,7 +63,7 @@ a[href]:hover {
 }
 .warning p {
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   color: #EEEEEE;
 }
 
@@ -72,6 +74,16 @@ a[href]:hover {
 .table-invisible tr td:first-child {
   font-weight: 700;
   width: min(50%, 200px);
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px;
+  font-size: 13px;
+  background-color: #b8b8b8;
+  border-radius: 5px;
+  color: #EEEEEE;
+  margin-right: 5px;
 }
 
 nav {
