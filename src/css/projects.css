@@ -88,8 +88,11 @@ a[href]:hover {
 
 nav {
   position: sticky;
+  top: 0;
   display: flex;
   margin-bottom: 20px;
+  background-color: white;
+  z-index: 100;
 }
 nav .nav-item {
   flex-direction: row;
@@ -106,10 +109,15 @@ nav .nav-item:hover {
 @media (min-width: 500px) {
   nav {
     justify-content: center;
-    box-shadow: #e7e7e7 0 3px 10px 10px;
+    box-shadow: #e7e7e7 0 0 10px 10px;
+    position: sticky;
+    top: 10px;
+    left: calc(50% - 250px);
+    border-radius: 10px;
+    width: 500px;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 499.98px) {
   nav {
     justify-content: space-between;
     border-bottom: solid #b8b8b8 1px;
@@ -118,27 +126,17 @@ nav .nav-item:hover {
     padding: 20px;
   }
 }
-.project-group {
-  border-top: solid 1px #b8b8b8;
-  padding-top: 10px;
-}
 .project-group h3 {
   font-size: 32px;
-}
-.project-group .project {
-  margin-right: 30px;
-  border-top: none;
 }
 .project-group .project h3 {
   font-size: 23px;
 }
-
-.project {
-  padding: 10px;
-  margin-top: 30px;
-  border-top: solid 1px #b8b8b8;
-  width: 100%;
+.project-group .project .body {
+  display: table;
+  width: min(100% - 60px, 1000px);
 }
+
 .project h3 {
   font-size: 32px;
 }
@@ -242,6 +240,79 @@ nav .nav-item:hover {
   }
   .project .technologies {
     padding-left: 0;
+  }
+}
+@media (min-width: 500px) {
+  .project-group {
+    border-top: solid 1px #e7e7e7;
+    padding: 10px;
+    position: sticky;
+    top: 75px;
+    left: calc(50% - 450px);
+    background-color: white;
+    min-height: 80vh;
+    border: #b8b8b8 1px solid;
+    border-radius: 20px;
+    overflow: hidden;
+    width: min(100%, 900px);
+    margin-bottom: 100px;
+    box-shadow: #e7e7e7 0 0 10px 10px;
+  }
+  .project-group .project {
+    padding-right: 30px;
+    border-top: none;
+    position: unset;
+    min-height: unset;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    top: unset;
+    left: unset;
+    translate: unset;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+  .project-group .project h3 {
+    font-size: 23px;
+  }
+  .project-group .project .body {
+    display: table;
+    width: min(100% - 60px, 1000px);
+  }
+  .project {
+    border-top: solid 1px #b8b8b8;
+    padding: 10px;
+    position: sticky;
+    top: 75px;
+    left: calc(50% - 450px);
+    background-color: white;
+    box-shadow: #e7e7e7 0 0 10px 10px;
+    min-height: 80vh;
+    border: #b8b8b8 1px solid;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 100px;
+    width: min(100%, 900px);
+  }
+  .margin {
+    height: 100vh;
+    background-color: white;
+  }
+}
+@media (max-width: 499.98px) {
+  .project {
+    border-top: 1px solid #b8b8b8;
+    top: 70px;
+    padding-top: 20px;
+  }
+  .project-group {
+    border-top: 1px solid #b8b8b8;
+    top: 70px;
+    padding-top: 20px;
+  }
+  .project-group .project {
+    border-top: none;
+    top: 0;
   }
 }
 

@@ -3,29 +3,25 @@
 @use 'base';
 
 .project-group {
-    border-top: solid 1px colors.$light-gray;
-    padding-top: 10px;
 
     h3 {
         font-size: font.$big;
     }
 
     .project {
-        margin-right: 30px;
-        border-top: none;
 
         h3 {
             font-size: font.$bigger;
+        }
+
+        .body {
+            display: table;
+            width: min(calc(100% - 60px), 1000px);
         }
     }
 }
 
 .project {
-    padding: 10px;
-    margin-top: 30px;
-    border-top: solid 1px colors.$light-gray;
-    width: 100%;
-
     h3 {
         font-size: font.$big;
     }
@@ -155,9 +151,100 @@
                 visibility: visible;
             }
         }
-        
-        .technologies{
+
+        .technologies {
             padding-left: 0;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+
+    $card-width: 900px;
+    .project-group {
+        border-top: solid 1px colors.$light-light-gray;
+        padding: 10px;
+        position: sticky;
+        top: 75px;
+        left: calc(50% - $card-width / 2);
+        background-color: white;
+
+        min-height: 80vh;
+        border: colors.$light-gray 1px solid;
+        border-radius: 20px;
+        overflow: hidden;
+
+        width: min(100%, $card-width);
+
+        margin-bottom: 100px;
+        box-shadow: colors.$light-light-gray 0 0 10px 10px;
+
+        .project {
+
+            padding-right: 30px;
+            border-top: none;
+            position: unset;
+
+            min-height: unset;
+            border: none;
+            border-radius: 0;
+            margin-bottom: 0;
+            top: unset;
+            left:unset;
+            translate: unset;
+            box-shadow: none;
+            margin-bottom: 0;
+
+            h3 {
+                font-size: font.$bigger;
+            }
+
+            .body {
+                display: table;
+                width: min(calc(100% - 60px), 1000px);
+            }
+        }
+    }
+
+    .project {
+        border-top: solid 1px colors.$light-gray;
+        padding: 10px;
+        position: sticky;
+        top: 75px;
+        left: calc(50% - $card-width / 2);
+        background-color: white;
+        box-shadow: colors.$light-light-gray 0 0 10px 10px;
+
+        min-height: 80vh;
+        border: colors.$light-gray 1px solid;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 100px;
+
+        width: min(100%, $card-width);
+    }
+
+    .margin {
+        height: 100vh;
+        background-color: white;
+    }
+}
+
+@media (max-width: 499.98px) {
+    .project {
+        border-top: 1px solid colors.$light-gray;
+        top: 70px;
+        padding-top: 20px;
+    }
+
+    .project-group {
+        border-top: 1px solid colors.$light-gray;
+        top: 70px;
+        padding-top: 20px;
+
+        .project {
+            border-top: none;
+            top: 0;
         }
     }
 }
