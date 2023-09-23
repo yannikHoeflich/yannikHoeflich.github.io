@@ -13,16 +13,16 @@ div.sticky{
         top: -100px;
         z-index: 3;
     }
-}
 
-div.sticky::before{
-    content: '';
-    position: relative;
-    top: 0;
-    display: block;
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-    height: 100px;
-    z-index: 2;
+    &::before{
+        content: '';
+        position: relative;
+        top: 0;
+        display: block;
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        height: 100px;
+        z-index: 2;
+    }
 }
 
 .page.p4, .page.p5, .page.p6 {
@@ -68,6 +68,27 @@ div.sticky::before{
         a{
             display: block;
             text-align: center;
+        }
+    }
+}
+
+@media (max-width: 499.98px) {
+    div.sticky{
+        h1{
+            font-size: font.$biggest;
+            top: -50px;
+        }
+
+        &::before{
+            height: 50px;
+            top: -50px;
+        }
+    }
+
+    .page.p4, .page.p5, .page.p6 {
+        h1{
+            font-size: font.$big;
+            margin-top: 50px;
         }
     }
 }

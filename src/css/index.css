@@ -205,6 +205,9 @@ h1 {
     padding: 20px;
     height: calc(100% - 40px);
   }
+  .page .main h1 {
+    font-size: 45px;
+  }
 }
 .page.p1::before {
   content: "";
@@ -309,7 +312,6 @@ div.sticky h1 {
   top: -100px;
   z-index: 3;
 }
-
 div.sticky::before {
   content: "";
   position: relative;
@@ -358,6 +360,20 @@ div.sticky::before {
   text-align: center;
 }
 
+@media (max-width: 499.98px) {
+  div.sticky h1 {
+    font-size: 45px;
+    top: -50px;
+  }
+  div.sticky::before {
+    height: 50px;
+    top: -50px;
+  }
+  .page.p4 h1, .page.p5 h1, .page.p6 h1 {
+    font-size: 32px;
+    margin-top: 50px;
+  }
+}
 @media (min-width: 500px) {
   nav {
     z-index: 100;

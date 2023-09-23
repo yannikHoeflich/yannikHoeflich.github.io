@@ -18,19 +18,6 @@ function ShowScrollBar() {
     scrollbarStyle.textContent = "";
 }
 
-/* HIDE PROJECTS HEADLINE */
-let projectHeadHidden = true;
-let projectHeadLineElement = document.querySelector(".projects-headline");
-
-function ShowProjectHead(){
-    projectHeadLineElement?.classList.remove("invisible");
-    projectHeadHidden = false;
-}
-
-function HideProjectHead(){
-    projectHeadLineElement?.classList.add("invisible");
-    projectHeadHidden = true;
-}
 
 /* HIDE SCROLL BAR AND SNAP PAGES */
 let hidden = false;
@@ -115,16 +102,6 @@ window.setInterval(() => {
 }, 100);
 
 function ScrollToPage(pageIndex: number){
-    if(pageIndex >= 3){
-        if(projectHeadHidden){
-            ShowProjectHead();
-        }
-    } else{
-        if(!projectHeadHidden){
-            HideProjectHead();
-        }
-    }
-
     let scrollTop = window.innerHeight * pageIndex;
     scrollTarget = scrollTop;
     scrollComplete = false;
@@ -162,14 +139,21 @@ for(let i = 0; i < navItems.length; i++){
     });
 }
 
+/* Show/Hide Loop */
 window.setInterval(() => {
     let currentScroll = document.documentElement.scrollTop;
     let windowHeight = window.innerHeight;
 
-    if(currentScroll < windowHeight){
+    if(currentScroll < windowHeight * 1){
         HideNav();
     } else{
         ShowNav();
+    }
+
+    if(currentScroll < windowHeight * 3){
+        HideProjectHead();
+    } else{
+        ShowProjectHead();
     }
 
     var gageIndex = Math.round(currentScroll / windowHeight);
@@ -178,6 +162,7 @@ window.setInterval(() => {
     navItems[gageIndex].classList.add("selected");
 }, 10);
 
+/* Nav Menu */
 let nav = document.querySelector("nav");
 function ShowNav(){
     if(!nav?.classList.contains(invisible)){
@@ -193,4 +178,24 @@ function HideNav(){
     }
 
     nav?.classList.add(invisible);
+}
+
+/* HIDE PROJECTS HEADLINE */
+let projectHeadHidden = true;
+let projectHeadLineElement = document.querySelector(".projects-headline");
+
+function ShowProjectHead(){
+    if(!projectHeadLineElement?.classList.contains(invisible)){
+        return;
+    }
+
+    projectHeadLineElement?.classList.remove(invisible);
+}
+
+function HideProjectHead(){
+    if(projectHeadLineElement?.classList.contains(invisible)){
+        return;
+    }
+
+    projectHeadLineElement?.classList.add(invisible);
 }
