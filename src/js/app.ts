@@ -50,7 +50,7 @@ addEventListener("scroll", async () => {
         ShowScrollBar();
     }
 
-    if (!scrollComplete) {
+    /*if (!scrollComplete) {
         lastScroll = currentScroll;
         return;
     }
@@ -74,7 +74,7 @@ addEventListener("scroll", async () => {
         ScrollToPage(page);
     }
 
-    lastScroll = currentScroll;
+    lastScroll = currentScroll;*/
 });
 
 
@@ -90,7 +90,7 @@ window.setInterval(() => {
 
     let diffToLastScroll = Math.abs(currentScroll - lastAutoSnapScroll);
 
-    if(diffToLastScroll > 10){
+    if(diffToLastScroll > 5){
         lastAutoSnapScroll = currentScroll;
         return;
     }
@@ -99,12 +99,12 @@ window.setInterval(() => {
     if(diffToNextPage > window.innerHeight / 2){
         diffToNextPage = window.innerHeight - diffToNextPage;
     }
-
-    if(diffToNextPage > 50){
+    
+    if(diffToNextPage > 100){
         lastAutoSnapScroll = currentScroll;
         return;
     }
-
+    
 
     let page = Math.round(currentScroll / window.innerHeight);
     ScrollToPage(page);

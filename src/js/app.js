@@ -49,28 +49,31 @@ addEventListener("scroll", () => __awaiter(void 0, void 0, void 0, function* () 
     if (currentScroll > 0 && hidden) {
         ShowScrollBar();
     }
-    if (!scrollComplete) {
+    /*if (!scrollComplete) {
         lastScroll = currentScroll;
         return;
     }
+
     let diff = currentScroll % window.innerHeight;
-    if (diff > window.innerHeight / 2) {
+    if(diff > window.innerHeight / 2){
         diff = window.innerHeight - diff;
     }
-    if (diff > 50) {
+
+    if(diff > 50){
         return;
     }
+
     if (currentScroll > lastScroll) {
         let raw = currentScroll / window.innerHeight;
         let page = Math.ceil(raw);
         ScrollToPage(page);
-    }
-    else {
+    } else {
         let raw = currentScroll / window.innerHeight;
         let page = Math.floor(raw);
         ScrollToPage(page);
     }
-    lastScroll = currentScroll;
+
+    lastScroll = currentScroll;*/
 }));
 /* AUTO SNAP */
 let lastAutoSnapScroll = 0;
@@ -81,7 +84,7 @@ window.setInterval(() => {
         return;
     }
     let diffToLastScroll = Math.abs(currentScroll - lastAutoSnapScroll);
-    if (diffToLastScroll > 10) {
+    if (diffToLastScroll > 5) {
         lastAutoSnapScroll = currentScroll;
         return;
     }
@@ -89,7 +92,7 @@ window.setInterval(() => {
     if (diffToNextPage > window.innerHeight / 2) {
         diffToNextPage = window.innerHeight - diffToNextPage;
     }
-    if (diffToNextPage > 50) {
+    if (diffToNextPage > 100) {
         lastAutoSnapScroll = currentScroll;
         return;
     }
