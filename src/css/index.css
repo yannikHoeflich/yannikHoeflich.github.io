@@ -188,22 +188,18 @@ h1 {
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   box-shadow: 0px -7px 27px -2px #8C8C8C;
 }
 .page .main {
-  padding: 20px;
-  height: calc(100% - 40px);
+  padding-top: 20px;
+  height: 100%;
 }
 
 @media (max-width: 499.98px) {
   .page {
     width: 100vw;
-  }
-  .page .main {
-    padding: 20px;
-    height: calc(100% - 40px);
   }
   .page .main h1 {
     font-size: 45px;
@@ -404,6 +400,7 @@ div.sticky::before {
     color: #838383;
     height: 50px;
     cursor: pointer;
+    text-transform: capitalize;
   }
   nav ul li.nav-page:hover {
     padding-left: 10px;
@@ -427,6 +424,7 @@ div.sticky::before {
     color: #838383;
     font-weight: 700;
     margin-top: 30px;
+    text-transform: uppercase;
   }
   nav ul li.headline::marker {
     display: none;
