@@ -61,9 +61,6 @@ function ScrollToPage(pageIndex) {
             return;
         }
         let currentScroll = document.documentElement.scrollTop;
-        if (currentScroll == lastScroll) {
-            window.scrollTo({ behavior: "smooth", top: scrollTop });
-        }
         let diff = Math.abs(currentScroll - scrollTarget);
         console.log(diff);
         scrollComplete = diff < 10;
