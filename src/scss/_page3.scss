@@ -1,0 +1,27 @@
+.page.p3 {
+    .socials {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        a {
+            display: inline-block;
+            height: 70px;
+            width: 70px;
+
+            transition: 0.3s;
+            .icon {
+                transition: 0.3s;
+                width: 50px;
+            }
+        }
+
+        a:hover {
+            width: 80px;
+            .icon {
+                width: 60px;
+            }
+        }
+    }
+}

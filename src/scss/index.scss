@@ -1,6 +1,13 @@
 @use 'colors';
 @use 'base';
+@use 'font';
+@use 'links';
+@use 'pages';
+@use 'page1';
+@use 'page2';
+@use 'page3';
+@use 'projectpages';
 
-.name{
-    color: colors.$dark-blue;
+body{
+    overflow-x: hidden;
 }

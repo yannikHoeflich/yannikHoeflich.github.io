@@ -10,13 +10,14 @@
     font-size: font.$size-normal;
 }
 
-html, body{
+html,
+body {
     margin: 0;
     padding: 0;
     border: none;
 }
 
-main{
+main {
     margin: 30px;
 }
 
@@ -55,7 +56,7 @@ a[href]:hover {
     margin-bottom: 30px;
 }
 
-.warning{
+.warning {
     background-color: colors.$orange;
     padding: 0;
     border-radius: 15px;
@@ -65,31 +66,36 @@ a[href]:hover {
     color: colors.$white;
     border: solid 1px colors.$light-gray;
 
-    p{
+    p {
         font-weight: font.$weight-normal;
         font-size: font.$size-normal;
         color: colors.$white;
     }
 }
 
-.table-invisible{
+.invisible{
+    opacity: 0;
+}
+
+.table-invisible {
     border: none;
     width: 100%;
 
-    tr td:first-child{
+    tr td:first-child {
         font-weight: font.$bold;
         width: min(50%, 200px);
     }
 }
 
-.badge{
+.badge {
     display: inline-block;
     padding: 4px;
     font-size: font.$smaller;
     background-color: colors.$light-gray;
-    border-radius: 5px;
+    border-radius: 7px;
     color: colors.$white;
     margin-right: 5px;
+    box-shadow: inset 0px 0px 3px -1px colors.$black;
 }
 
 nav {
@@ -114,10 +120,67 @@ nav {
     }
 }
 
+.material-symbols-rounded {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 100,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.technologies {
+    padding-left: 30px;
+
+    i::after {
+        @extend .badge;
+        font-style: normal;
+    }
+
+    i.maui::after {
+        content: 'Maui.NET';
+        background-color: colors.$purple;
+    }
+
+    i.cs::after {
+        content: 'C#';
+        background-color: colors.$green;
+    }
+
+    i.dotnet::after {
+        content: '.NET';
+        background-color: colors.$orange;
+    }
+
+    i.mongo::after {
+        content: 'MongoDB';
+        background-color: colors.$dark-green;
+    }
+
+    i.blazor::after {
+        content: 'Blazor';
+        background-color: colors.$blue;
+    }
+
+    i.c::after {
+        content: 'C';
+        background-color: colors.$red;
+    }
+
+    i.bootstrap::after {
+        content: 'Bootstrap';
+        background-color: colors.$purple;
+    }
+
+    i.rest::after {
+        content: 'Rest API';
+        background-color: colors.$pink;
+    }
+}
 
 @media (min-width: 500px) {
     $width: 500px;
-    nav{
+
+    nav {
         justify-content: center;
         box-shadow: colors.$light-light-gray 0 0 10px 10px;
 
@@ -130,11 +193,11 @@ nav {
 }
 
 @media (max-width: 499.98px) {
-    nav{
+    nav {
         justify-content: space-between;
         border-bottom: solid colors.$light-gray 1px;
-        
-        .nav-item{
+
+        .nav-item {
             padding: 20px;
         }
     }

@@ -1,0 +1,71 @@
+@use 'font';
+@use 'colors';
+
+.page.p1::before {
+    content: "";
+    background-image: url("../../src/img/forest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+.page.p1 {
+    .content {
+        position: absolute;
+        left: 50%;
+        translate: -50% 0;
+        top: 150px;
+
+        p {
+            text-align: center;
+            font-size: font.$big;
+            color: colors.$black;
+        }
+    }
+
+    .arrow-down {
+        position: absolute;
+        left: 50%;
+        translate: -50% 0;
+        bottom: 40px;
+        display: block;
+        height: 80px;
+        width: 80px;
+        overflow: hidden;
+        border-radius: 50%;
+        cursor: pointer;
+
+        span {
+            text-align: center;
+            color: white;
+            font-size: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+    }
+
+    .arrow-down:hover::before {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 100px;
+        filter: blur(4px);
+        background-color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+    }
+}

@@ -6,7 +6,8 @@
   font-size: 16px;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   border: none;
@@ -67,6 +68,10 @@ a[href]:hover {
   color: #EEEEEE;
 }
 
+.invisible {
+  opacity: 0;
+}
+
 .table-invisible {
   border: none;
   width: 100%;
@@ -76,14 +81,15 @@ a[href]:hover {
   width: min(50%, 200px);
 }
 
-.badge {
+.badge, .links a::before, .technologies i::after {
   display: inline-block;
   padding: 4px;
   font-size: 13px;
   background-color: #b8b8b8;
-  border-radius: 5px;
+  border-radius: 7px;
   color: #EEEEEE;
   margin-right: 5px;
+  box-shadow: inset 0px 0px 3px -1px #101010;
 }
 
 nav {
@@ -106,6 +112,49 @@ nav .nav-item:hover {
   text-underline-offset: 5px;
 }
 
+.material-symbols-rounded {
+  font-variation-settings: "FILL" 0, "wght" 100, "GRAD" 0, "opsz" 24;
+}
+
+.technologies {
+  padding-left: 30px;
+}
+.technologies i::after {
+  font-style: normal;
+}
+.technologies i.maui::after {
+  content: "Maui.NET";
+  background-color: #A95BBF;
+}
+.technologies i.cs::after {
+  content: "C#";
+  background-color: #568F43;
+}
+.technologies i.dotnet::after {
+  content: ".NET";
+  background-color: #fb8500;
+}
+.technologies i.mongo::after {
+  content: "MongoDB";
+  background-color: #3D6530;
+}
+.technologies i.blazor::after {
+  content: "Blazor";
+  background-color: #219ebc;
+}
+.technologies i.c::after {
+  content: "C";
+  background-color: #d90429;
+}
+.technologies i.bootstrap::after {
+  content: "Bootstrap";
+  background-color: #A95BBF;
+}
+.technologies i.rest::after {
+  content: "Rest API";
+  background-color: #A90EAE;
+}
+
 @media (min-width: 500px) {
   nav {
     justify-content: center;
@@ -126,8 +175,231 @@ nav .nav-item:hover {
     padding: 20px;
   }
 }
-.name {
-  color: #126782;
+.links {
+  margin-top: 40px;
+  padding-left: 30px;
+}
+.links a {
+  display: table;
+  margin-top: 10px;
+}
+.links a::before {
+  content: "Other";
+  background-color: #126782;
+}
+.links a[href*="github.com"]::before {
+  content: "GitHub";
+}
+.links a[href*="github.com"][href$="/wiki"]::before {
+  content: "Wiki";
+}
+.links a[href*="play.google.com"]::before {
+  content: "Playstore";
+}
+.links a[href*="nuget.org"]::before {
+  content: "NuGet";
+}
+
+@media (max-width: 650px) {
+  .links {
+    padding-left: 0;
+  }
+  .links a {
+    font-size: 0;
+  }
+  .links a::before {
+    font-size: 16px;
+  }
+  .links a::after {
+    font-size: 16px;
+    content: "Link";
+    display: inline;
+    visibility: visible;
+  }
+}
+h1 {
+  text-align: center;
+  font-size: 80px;
+  color: #101010;
+  text-transform: capitalize;
+}
+
+.page {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  box-shadow: 0px -7px 27px -2px #8C8C8C;
+}
+.page .main {
+  padding: 20px;
+  height: calc(100% - 40px);
+}
+
+@media (max-width: 499.98px) {
+  .page {
+    width: 100vw;
+  }
+  .page .main {
+    padding: 20px;
+    height: calc(100% - 40px);
+  }
+}
+.page.p1::before {
+  content: "";
+  background-image: url("../../src/img/forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page.p1 .content {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  top: 150px;
+}
+.page.p1 .content p {
+  text-align: center;
+  font-size: 32px;
+  color: #101010;
+}
+.page.p1 .arrow-down {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  bottom: 40px;
+  display: block;
+  height: 80px;
+  width: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.page.p1 .arrow-down span {
+  text-align: center;
+  color: white;
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.page.p1 .arrow-down:hover::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+}
+
+.page.p2 p {
+  text-align: center;
+  font-size: 23px;
+}
+
+.page.p3 .socials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+.page.p3 .socials a {
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+  transition: 0.3s;
+}
+.page.p3 .socials a .icon {
+  transition: 0.3s;
+  width: 50px;
+}
+.page.p3 .socials a:hover {
+  width: 80px;
+}
+.page.p3 .socials a:hover .icon {
+  width: 60px;
+}
+
+div.sticky {
+  position: sticky;
+  top: 0;
+  height: 0;
+  z-index: 100;
+  transition: 0.8s;
+  transition-delay: 0.5s;
+}
+div.sticky h1 {
+  position: relative;
+  top: -100px;
+  z-index: 3;
+}
+
+div.sticky::before {
+  content: "";
+  position: relative;
+  top: 0;
+  display: block;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  height: 100px;
+  z-index: 2;
+}
+
+.page.p4 h1, .page.p5 h1, .page.p6 h1 {
+  font-size: 45px;
+  margin-top: 100px;
+}
+.page.p4 .technologies, .page.p5 .technologies, .page.p6 .technologies {
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+  position: relative;
+  left: 50%;
+  translate: -50% 0;
+  padding: 0;
+  padding-left: 8px;
+}
+.page.p4 .description, .page.p5 .description, .page.p6 .description {
+  max-width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  text-align: center;
+  font-size: 20px;
+}
+.page.p4 .links, .page.p5 .links, .page.p6 .links {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  translate: -50% 0;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+}
+.page.p4 .links a, .page.p5 .links a, .page.p6 .links a {
+  display: block;
+  text-align: center;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=index.css.map */

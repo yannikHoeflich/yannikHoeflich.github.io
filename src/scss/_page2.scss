@@ -1,0 +1,8 @@
+@use 'font';
+
+.page.p2 {
+    p {
+        text-align: center;
+        font-size: font.$bigger;
+    }
+}

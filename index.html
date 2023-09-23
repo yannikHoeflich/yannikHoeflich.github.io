@@ -7,9 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/css/index.css" />
   <title>Yannik Höflich</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
+  <!--
   <nav>
     <a class="nav-item" href="/">
       Home
@@ -24,27 +27,114 @@
       Contact Me
     </a>
   </nav>
+  -->
   <!--<h1 class="name gap-below">Yannik Höflich</h1>-->
-  <main>
-    <h1 class="gap-below">Home</h1>
-  <h3 class="gap-below">Hey!</h3>
-  <p class="gap-below">
-    My name is Yannik Höflich, I am a business Informatics student from Germany.<br />
-    Feel free to look around to get to know me better!
-  </p>
+  <div class="page p1">
+    <div class="content">
+      <h1 class="gap-below">Yannik Höflich.</h1>
+      <p class="gap-below">
+        Business Informatics student from Germany
+      </p>
+    </div>
 
-  <div class="warning">
-    !!! Comming soon !!!
-    <p>
-      This website is still in the build progress, thats the reason why some features or pages are not available.
-    </p>
+    <a class="arrow-down">
+      <span class="material-symbols-rounded">
+        expand_more
+      </span>
+    </a>
   </div>
-</main>
+  <div class="page p2">
+    <div class="main">
+      <h1 class="gap-below">About Me</h1>
+      <p class="gap-below">
+      </p>
+    </div>
+  </div>
+  <div class="page p3">
+    <div class="main">
+      <h1 class="gap-below">Contact me</h1>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/yannik-höflich-0b4025243"><img class="icon" src="src/svg/linkedin.svg"></a>
+        <a href="https://github.com/yannikHoeflich"><img class="icon" src="src/svg/github.svg"></a>
+        <a href="mailto:yannik@hoeflich.email"><img class="icon" src="src/svg/mail.svg"></a>
+      </div>
+    </div>
+  </div>
+  <div class="sticky invisible projects-headline">
+    <h1>projects</h1>
+  </div>
+  <div class="page p4">
+    <div class="main">
+      <h1>Matrix Web</h1>
+      <p class="technologies">
+        <i class="cs"></i>
+        <i class="dotnet"></i>
+        <i class="blazor"></i>
+        <i class="c"></i>
+        <i class="bootstrap"></i>
+      </p>
+      <p class="description">
+        MatrixWeb is an open-source LED matrix control software designed for hobbyists interested in
+        creating engaging displays on their LED matrices. It offers a practical way to generate and showcase
+        various images, animations, and real-time information. The software is accessible through a
+        web-based interface, making it easy to control and configure display settings.
+      </p>
+      <p class="links">
+        <a href="https://github.com/yannikHoeflich/MatrixWeb">https://github.com/yannikHoeflich/MatrixWeb</a>
+        <a href="https://github.com/yannikHoeflich/MatrixWeb/wiki">https://github.com/yannikHoeflich/MatrixWeb/wiki</a>
+        <a
+          href="https://www.nuget.org/packages/MatrixWeb.Extensions/">https://www.nuget.org/packages/MatrixWeb.Extensions/</a>
+      </p>
+    </div>
+  </div>
+  <div class="page p5">
+    <div class="main">
+      <h1>Cig App</h1>
+      <p class="technologies">
+        <i class="maui"></i>
+        <i class="cs"></i>
+        <i class="dotnet"></i>
+        <i class="blazor"></i>
+        <i class="mongo"></i>
+      </p>
+      <p class="description">
+        Explore CigApp, an Android application designed for users in Germany. CigApp simplifies the process
+        of finding nearby cigarette vending machines. With user-contributed data, it provides real-time
+        information, making your search efficient and hassle-free.
+      </p>
+      <p class="links">
+        <a
+          href="https://play.google.com/store/apps/details?id=com.srizz.cigapp">https://play.google.com/store/apps/details?id=com.srizz.cigapp</a>
+      </p>
+    </div>
+  </div>
+  <div class="page p5">
+    <div class="main">
+      <h1>Tankerkoenig.Net</h1>
+      <p class="technologies">
+        <i class="cs"></i>
+        <i class="dotnet"></i>
+        <i class="rest"></i>
+      </p>
+      <p class="description">
+        An unofficial .NET API Wrapper for the Tankkönig api. Tankkönig provides the gas
+        prices for german gas stations. The gas stations have to provide them to the 'MTS-K'. With this API
+        Wrapper you can request nearby gas stations and their prices.
+      </p>
+      <p class="links">
+        <a
+          href="https://github.com/yannikHoeflich/Tankerkoenig.Net">https://github.com/yannikHoeflich/Tankerkoenig.Net</a>
+        <a href="https://www.nuget.org/packages/TankerkoenigNet/">https://www.nuget.org/packages/TankerkoenigNet/</a>
+        <a href="https://tankerkoenig.de/">https://tankerkoenig.de/</a>
+      </p>
+    </div>
+  </div>
   <script>
     if (window.location.host == "yannikhoeflich.github.io") {
       window.location = "https://yannik.hoeflich.site/"
     }
   </script>
+  <script src="src/js/app.js"></script>
 </body>
 
 </html>
