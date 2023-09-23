@@ -8,16 +8,6 @@ arrowDownElement?.addEventListener("click", async () => {
 });
 
 /* SCROLL BAR */
-function HideScrollBar() {
-    hidden = true;
-    scrollbarStyle.textContent = "*{-ms-overflow-style: none;scrollbar-width: none;}*::-webkit-scrollbar{display: none;}";
-}
-
-function ShowScrollBar() {
-    hidden = false;
-    scrollbarStyle.textContent = "";
-}
-
 
 /* HIDE SCROLL BAR AND SNAP PAGES */
 let hidden = false;
@@ -30,42 +20,7 @@ HideScrollBar();
 let lastScroll = 0;
 let scrollComplete = true;
 let scrollTarget = 0;
-addEventListener("scroll", async () => {
-    let currentScroll = document.documentElement.scrollTop;
 
-    if (currentScroll == 0 && !hidden) {
-        HideScrollBar()
-    }
-    if (currentScroll > 0 && hidden) {
-        ShowScrollBar();
-    }
-
-    /*if (!scrollComplete) {
-        lastScroll = currentScroll;
-        return;
-    }
-
-    let diff = currentScroll % window.innerHeight;
-    if(diff > window.innerHeight / 2){
-        diff = window.innerHeight - diff;
-    }
-
-    if(diff > 50){
-        return;
-    }
-
-    if (currentScroll > lastScroll) {
-        let raw = currentScroll / window.innerHeight;
-        let page = Math.ceil(raw);
-        ScrollToPage(page);
-    } else {
-        let raw = currentScroll / window.innerHeight;
-        let page = Math.floor(raw);
-        ScrollToPage(page);
-    }
-
-    lastScroll = currentScroll;*/
-});
 
 
 /* AUTO SNAP */
@@ -140,7 +95,8 @@ for(let i = 0; i < navItems.length; i++){
 }
 
 /* Show/Hide Loop */
-window.setInterval(() => {
+addEventListener("scroll", async () => {
+
     let currentScroll = document.documentElement.scrollTop;
     let windowHeight = window.innerHeight;
 
@@ -156,11 +112,36 @@ window.setInterval(() => {
         ShowProjectHead();
     }
 
+
+    if (currentScroll == 0) {
+        HideScrollBar();
+    } else{
+        ShowScrollBar();
+    }
+
     var gageIndex = Math.round(currentScroll / windowHeight);
 
     navItems.forEach(elem => elem.classList.remove("selected"));
     navItems[gageIndex].classList.add("selected");
-}, 10);
+});
+
+/* HIDE SCROLL BAR */
+function HideScrollBar() {
+    if(hidden){
+        return;
+    }
+    hidden = true;
+    scrollbarStyle.textContent = "*{-ms-overflow-style: none;scrollbar-width: none;}*::-webkit-scrollbar{display: none;}";
+}
+
+function ShowScrollBar() {
+    if(!hidden){
+        return;
+    }
+    hidden = false;
+    scrollbarStyle.textContent = "";
+}
+
 
 /* Nav Menu */
 let nav = document.querySelector("nav");
