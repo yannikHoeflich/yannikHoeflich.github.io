@@ -8,12 +8,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const invisible = "invisible";
 /* SCROLL ARROW */
 let arrowDownElement = document.querySelector(".arrow-down");
 arrowDownElement === null || arrowDownElement === void 0 ? void 0 : arrowDownElement.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
     ShowScrollBar();
     ScrollToPage(1);
 }));
+/* SCROLL BAR */
 function HideScrollBar() {
     hidden = true;
     scrollbarStyle.textContent = "*{-ms-overflow-style: none;scrollbar-width: none;}*::-webkit-scrollbar{display: none;}";
@@ -133,4 +135,36 @@ function ScrollToPage(pageIndex) {
     window.setTimeout(() => {
         scrollComplete = true;
     }, 700);
+}
+let navItems = document.querySelectorAll(".nav-page");
+for (let i = 0; i < navItems.length; i++) {
+    navItems[i].addEventListener("click", () => {
+        ScrollToPage(i);
+    });
+}
+window.setInterval(() => {
+    let currentScroll = document.documentElement.scrollTop;
+    let windowHeight = window.innerHeight;
+    if (currentScroll < windowHeight) {
+        HideNav();
+    }
+    else {
+        ShowNav();
+    }
+    var gageIndex = Math.round(currentScroll / windowHeight);
+    navItems.forEach(elem => elem.classList.remove("selected"));
+    navItems[gageIndex].classList.add("selected");
+}, 10);
+let nav = document.querySelector("nav");
+function ShowNav() {
+    if (!(nav === null || nav === void 0 ? void 0 : nav.classList.contains(invisible))) {
+        return;
+    }
+    nav === null || nav === void 0 ? void 0 : nav.classList.remove(invisible);
+}
+function HideNav() {
+    if (nav === null || nav === void 0 ? void 0 : nav.classList.contains(invisible)) {
+        return;
+    }
+    nav === null || nav === void 0 ? void 0 : nav.classList.add(invisible);
 }

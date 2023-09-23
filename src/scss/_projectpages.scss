@@ -45,7 +45,7 @@ div.sticky::before{
     }
 
     .description{
-        max-width: 500px;
+        width: min(500px, 92%);
         position: absolute;
         left: 50%;
         top: 50%;

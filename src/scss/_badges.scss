@@ -1,0 +1,62 @@
+@use 'font';
+@use 'colors';
+
+.badge {
+    display: inline-block;
+    padding: 4px;
+    font-size: font.$smaller;
+    background-color: colors.$light-gray;
+    border-radius: 7px;
+    color: colors.$white;
+    margin-right: 5px;
+    box-shadow: inset 0px 0px 3px -1px colors.$black;
+}
+
+.technologies {
+    padding-left: 30px;
+
+    i::after {
+        @extend .badge;
+        font-style: normal;
+    }
+
+    i.maui::after {
+        content: 'Maui.NET';
+        background-color: colors.$purple;
+    }
+
+    i.cs::after {
+        content: 'C#';
+        background-color: colors.$green;
+    }
+
+    i.dotnet::after {
+        content: '.NET';
+        background-color: colors.$orange;
+    }
+
+    i.mongo::after {
+        content: 'MongoDB';
+        background-color: colors.$dark-green;
+    }
+
+    i.blazor::after {
+        content: 'Blazor';
+        background-color: colors.$blue;
+    }
+
+    i.c::after {
+        content: 'C';
+        background-color: colors.$red;
+    }
+
+    i.bootstrap::after {
+        content: 'Bootstrap';
+        background-color: colors.$purple;
+    }
+
+    i.rest::after {
+        content: 'Rest API';
+        background-color: colors.$pink;
+    }
+}
