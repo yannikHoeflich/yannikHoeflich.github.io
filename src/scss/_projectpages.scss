@@ -26,6 +26,8 @@ div.sticky{
 }
 
 .page.p4, .page.p5, .page.p6 {
+    position: relative;
+
 
     h1{
         font-size: font.$biggest;
@@ -70,6 +72,10 @@ div.sticky{
             text-align: center;
         }
     }
+}
+
+.page.p5, .page.p6 {
+    box-shadow: none;
 }
 
 @media (max-width: 499.98px) {

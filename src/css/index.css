@@ -318,6 +318,9 @@ div.sticky::before {
   z-index: 2;
 }
 
+.page.p4, .page.p5, .page.p6 {
+  position: relative;
+}
 .page.p4 h1, .page.p5 h1, .page.p6 h1 {
   font-size: 45px;
   margin-top: 100px;
@@ -354,6 +357,10 @@ div.sticky::before {
 .page.p4 .links a, .page.p5 .links a, .page.p6 .links a {
   display: block;
   text-align: center;
+}
+
+.page.p5, .page.p6 {
+  box-shadow: none;
 }
 
 @media (max-width: 499.98px) {
