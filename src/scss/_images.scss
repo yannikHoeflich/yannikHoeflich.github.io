@@ -1,0 +1,25 @@
+@media screen and (max-width: 1280px) { /* Specific to this particular image */
+    .page.p1::before {
+        background-image: url("../../src/img/forest_1280.jpg");
+    }
+  }
+  @media screen and (min-width: 1280.01px) and (max-width: 1920px) { /* Specific to this particular image */
+    .page.p1::before {
+        background-image: url("../../src/img/forest_1920.jpg");
+    }
+  } 
+  @media screen and (min-width: 1920.01px) and (max-width: 3440px) { /* Specific to this particular image */
+    .page.p1::before {
+        background-image: url("../../src/img/forest_3440.jpg");
+    }
+  }
+  @media screen and (min-width: 3440.01px) and (max-width: 3840px) { /* Specific to this particular image */
+    .page.p1::before {
+        background-image: url("../../src/img/forest_3840.jpg");
+    }
+  }
+  @media screen and (min-width: 3840.01px) { /* Specific to this particular image */
+    .page.p1::before {
+        background-image: url("../../src/img/forest_6000.jpg");
+    }
+  }

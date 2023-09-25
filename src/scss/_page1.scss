@@ -1,9 +1,9 @@
 @use 'font';
 @use 'colors';
+@use 'images';
 
 .page.p1::before {
     content: "";
-    background-image: url("../../src/img/forest.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
