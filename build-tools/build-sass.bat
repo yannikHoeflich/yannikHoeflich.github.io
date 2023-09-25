@@ -1,1 +1,1 @@
-sass src/scss:src/css
+sass src/scss:src/css --style compressed
