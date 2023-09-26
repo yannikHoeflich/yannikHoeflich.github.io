@@ -1,5 +1,8 @@
 @echo off
 
+echo cleaning ...
+CALL build-tools/cleanup.bat %1
+echo done
 echo building TypeScript ...
 CALL build-tools/build-ts.bat %1
 echo done
