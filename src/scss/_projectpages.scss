@@ -5,8 +5,7 @@ div.sticky{
     top: 0;
     height: 0;
     z-index: 100;
-    transition: 0.8s;
-    transition-delay: 0.5s;
+    transition: 0.5s;
 
     h1{
         position: relative;
@@ -30,7 +29,8 @@ div.sticky{
 
 
     h1{
-        font-size: font.$biggest;
+        font-size: var(--size-biggest);
+        line-height: var(--line-height-biggest);
         margin-top: 100px;
     }
 
@@ -54,7 +54,8 @@ div.sticky{
         translate: -50% -50%;
         text-align: center;
 
-        font-size: font.$normal-big;
+        font-size: var(--size-normal);
+        line-height: var(--line-height-normal);
     }
 
     .links{
@@ -81,7 +82,6 @@ div.sticky{
 @media (max-width: 499.98px) {
     div.sticky{
         h1{
-            font-size: font.$biggest;
             top: -50px;
         }
 
@@ -93,7 +93,6 @@ div.sticky{
 
     .page.p4, .page.p5, .page.p6 {
         h1{
-            font-size: font.$big;
             margin-top: 50px;
         }
     }

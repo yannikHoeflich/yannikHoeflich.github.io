@@ -4,7 +4,10 @@
 .badge {
     display: inline-block;
     padding: 4px;
-    font-size: font.$smaller;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: var(--size-smaller);
+    line-height: var(--line-height-smaller);
     background-color: colors.$light-gray;
     border-radius: 7px;
     color: colors.$white;

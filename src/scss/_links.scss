@@ -7,15 +7,20 @@
     margin-top: 40px;
     padding-left: 30px;
 
+    width: min(90%, 500px);
+
+
     a {
         display: table;
         margin-top: 10px;
+        font-size: var(--size-smaller);
     }
 
     a::before {
         @extend .badge;
         content: 'Other';
         background-color: colors.$dark-blue;
+        font-size: var(--size-smaller);
     }
 
     a[href*="github.com"]::before {
@@ -45,11 +50,11 @@
         }
 
         a::before {
-            font-size: font.$size-normal;
+            font-size: var(--size-smaller);
         }
 
         a::after {
-            font-size: font.$size-normal;
+            font-size: var(--size-smaller);
             content: 'Link';
             display: inline;
             visibility: visible;

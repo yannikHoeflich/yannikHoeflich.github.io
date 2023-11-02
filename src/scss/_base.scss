@@ -4,8 +4,8 @@
 * {
     font-family: 'Roboto', sans-serif;
     color: colors.$black;
-    font-weight: font.$weight-normal;
-    font-size: font.$size-normal;
+    font-weight: var(--weight-normal);
+    font-size: var(--size-normal);
 }
 
 html,
@@ -29,12 +29,13 @@ h5 {
 }
 
 h1 {
-    font-weight: font.$thin;
-    font-size: font.$biggest;
+    font-weight: var(--weight-thin);
+    font-size: var(--size-biggest);
+    line-height: var(--line-height-biggest);
 }
 
 b {
-    font-weight: font.$bold;
+    font-weight: var(--weight-bold);
 }
 
 a[href] {
@@ -47,7 +48,7 @@ a[href]:hover {
 }
 
 .thin {
-    font-weight: font.$thin;
+    font-weight: var(--weight-thin);
 }
 
 .gap-below {
@@ -58,15 +59,15 @@ a[href]:hover {
     background-color: colors.$orange;
     padding: 0;
     border-radius: 15px;
-    font-weight: font.$bold;
-    font-size: font.$bigger;
+    font-weight: var(--weight-bold);
+    font-size: var(--size-bigger);
     padding: 10px;
     color: colors.$white;
     border: solid 1px colors.$light-gray;
 
     p {
-        font-weight: font.$weight-normal;
-        font-size: font.$size-normal;
+        font-weight: var(--weight-normal);
+        font-size: var(--size-normal);
         color: colors.$white;
     }
 }
@@ -80,7 +81,7 @@ a[href]:hover {
     width: 100%;
 
     tr td:first-child {
-        font-weight: font.$bold;
+        font-weight: var(--weight-bold);
         width: min(50%, 200px);
     }
 }

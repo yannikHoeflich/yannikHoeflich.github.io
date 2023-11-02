@@ -29,8 +29,11 @@
             position: relative;
 
             li {
+                font-size: var(--size-smaller);
+
                 &.nav-page {
                     a {
+                        font-size: var(--size-smaller);
                         display: inline-block;
                         color: colors.$gray;
                         height: 50px;
@@ -67,7 +70,7 @@
                     padding-left: 0;
                     margin-left: 0;
                     color: colors.$gray;
-                    font-weight: font.$bold;
+                    font-weight: var(--weight-bold);
                     margin-top: 30px;
                     text-transform: uppercase;
 
@@ -81,7 +84,7 @@
     }
 }
 
-@media (max-width: 499.98px) {
+@media (max-width: 850px) {
     nav {
         display: none;
     }
